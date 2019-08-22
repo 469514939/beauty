@@ -26,13 +26,20 @@ class UserController extends AdminController
     {
         $grid = new Grid(new User);
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
-        $grid->column('password', __('Password'));
-        $grid->column('remember_token', __('Remember token'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', 'ID')->sortable();
+
+        $grid->column('name');
+        $grid->column('email');
+
+        $grid->column('profile.age');
+        $grid->column('profile.gender');
+
+        //or
+        $grid->profile()->age();
+        $grid->profile()->gender();
+
+        $grid->column('created_at');
+        $grid->column('updated_at');
 
         return $grid;
     }
