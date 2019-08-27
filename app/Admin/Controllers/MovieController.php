@@ -98,12 +98,35 @@ class MovieController extends AdminController
     {
         $form = new Form(new Movie);
 
-        $form->text('title', __('Title'));
-        $form->number('director', __('Director'));
-        $form->text('describe', __('Describe'));
-        $form->switch('rate', __('Rate'));
-        $form->text('released', __('Released'));
-        $form->datetime('release_at', __('Release at'))->default(date('Y-m-d H:i:s'));
+        // 显示记录id
+        $form->display('id', 'ID');
+
+        // 添加text类型的input框
+        $form->text('title', '电影标题');
+
+        $directors = [
+            1 => 'John',
+            2 => 'Smith',
+            3 => 'Kate' ,
+        ];
+
+        $form->select('director', '导演')->options($directors);
+
+        // 添加describe的textarea输入框
+        $form->textarea('describe', '简介');
+
+        // 数字输入框
+        $form->number('rate', '打分');
+
+        // 添加开关操作
+        $form->switch('released', '发布');
+
+        // 添加日期时间选择框
+        $form->datetime('release_at', '发布时间');
+
+        // 两个时间显示
+        $form->datetime('created_at', '创建时间');
+        $form->datetime('updated_at', '修改时间');
 
         return $form;
     }
