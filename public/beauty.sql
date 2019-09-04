@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-09-04 00:43:04
+Date: 2019-09-04 23:00:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -624,8 +624,8 @@ CREATE TABLE `goodsspec` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '' COMMENT '规格名称',
   `status` tinyint(4) DEFAULT '0' COMMENT '会员状态',
-  `created_time` timestamp NULL DEFAULT NULL COMMENT '创建时间',
-  `updated_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   `type` tinyint(1) DEFAULT '1' COMMENT '类型（1=文字，2=图片）',
@@ -674,8 +674,8 @@ CREATE TABLE `goodstype` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(100) DEFAULT '' COMMENT '名称',
   `status` tinyint(4) DEFAULT '0' COMMENT '状态',
-  `created_time` timestamp NULL DEFAULT NULL COMMENT '创建时间',
-  `updated_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序（同级有效）',
@@ -1577,8 +1577,8 @@ CREATE TABLE `pay` (
   `payee_remark` varchar(255) DEFAULT NULL COMMENT '付款备注',
   `payment_type` tinyint(10) DEFAULT NULL COMMENT '支付类型',
   `payee_serial_num` varchar(255) DEFAULT NULL COMMENT '收款流水号',
-  `created_time` int(11) DEFAULT NULL COMMENT '创建时间',
-  `updated_time` int(11) DEFAULT NULL COMMENT '修改时间',
+  `created_at` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updated_at` int(11) DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   `audit_time` int(11) DEFAULT '0' COMMENT '审核时间',
@@ -2073,8 +2073,8 @@ CREATE TABLE `products` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) DEFAULT '0' COMMENT '商品id号',
   `status` tinyint(4) DEFAULT '0' COMMENT '状态',
-  `created_time` timestamp NULL DEFAULT NULL COMMENT '创建时间',
-  `updated_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   `special_price` float(10,2) DEFAULT '0.00' COMMENT '特价',
@@ -2394,7 +2394,7 @@ CREATE TABLE `products_virtual` (
   `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '状态',
   `create_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
-  `updated_time` int(11) DEFAULT NULL COMMENT '修改时间',
+  `updated_at` int(11) DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`)
@@ -2444,8 +2444,8 @@ CREATE TABLE `recharge_order` (
   `completion_time` int(11) DEFAULT NULL COMMENT '订单完成时间',
   `handling_fee` float(10,2) DEFAULT '0.00' COMMENT '支付手续费',
   `status` tinyint(4) DEFAULT '0' COMMENT '状态',
-  `created_time` int(11) DEFAULT NULL COMMENT '创建时间',
-  `updated_time` int(11) DEFAULT NULL COMMENT '修改时间',
+  `created_at` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updated_at` int(11) DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   `order_status` tinyint(8) DEFAULT '0' COMMENT '订单状态 0=取消1=等待支付2=交易成功 3=交易失败',
@@ -2677,8 +2677,8 @@ CREATE TABLE `shopcart` (
   `create_time` int(10) unsigned DEFAULT '0' COMMENT '创建时间',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '对应产品id',
   `status` tinyint(4) DEFAULT '0' COMMENT '会员状态',
-  `created_time` int(11) DEFAULT NULL COMMENT '创建时间',
-  `updated_time` int(11) DEFAULT NULL COMMENT '修改时间',
+  `created_at` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updated_at` int(11) DEFAULT NULL COMMENT '修改时间',
   `created_by` int(11) DEFAULT NULL COMMENT '创建人',
   `updated_by` int(11) DEFAULT NULL COMMENT '修改人',
   PRIMARY KEY (`id`)
@@ -3051,6 +3051,14 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `nickname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '昵称',
+  `realname` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会员实名',
+  `mobile` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '手机号码',
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '头像',
+  `code` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '人员编码-不是会员号',
+  `vipcode` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会员号',
+  `card_no` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '实物会员卡号码',
+  `last_login_time` int(10) unsigned DEFAULT '0' COMMENT '最后登录时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -3058,7 +3066,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'test1', '469514939@qq.com', 'admin', '1', '2019-08-15 13:46:35', '2019-08-15 13:46:35');
+INSERT INTO `users` VALUES ('1', 'test1', '469514939@qq.com', 'admin', '1', '2019-08-15 13:46:35', '2019-08-15 13:46:35', '', null, null, '', '', null, null, '0');
 
 -- ----------------------------
 -- Table structure for user_account
@@ -3097,9 +3105,9 @@ CREATE TABLE `user_account` (
   `other_count` int(11) NOT NULL DEFAULT '0' COMMENT '其他积分总次数',
   `expired_points` double(12,2) NOT NULL DEFAULT '0.00' COMMENT '历史过期积分，年度清零累计',
   `status` tinyint(1) DEFAULT '1' COMMENT '状态---不允许删除，跟用户同时生效',
-  `created_time` int(11) DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `updated_time` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='用户金额积分额度账号总表';
@@ -3124,10 +3132,10 @@ CREATE TABLE `user_recharge_log` (
   `is_internal` tinyint(1) DEFAULT '0' COMMENT '是否内部充值，1内部充值＝不算提成 0=会员充值且计算提成',
   `description` varchar(256) DEFAULT NULL COMMENT '备注',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态 0=无效 1=有效 -1=删除',
-  `created_time` int(11) DEFAULT NULL COMMENT '创建时间',
+  `created_at` int(11) DEFAULT NULL COMMENT '创建时间',
   `created_by` int(11) DEFAULT '0' COMMENT '创建人',
   `updated_by` int(11) DEFAULT '0' COMMENT '更新人',
-  `updated_time` int(11) DEFAULT NULL COMMENT '更新时间',
+  `updated_at` int(11) DEFAULT NULL COMMENT '更新时间',
   `handler` varchar(255) DEFAULT NULL COMMENT '经手人',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10164 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='用户充值记录表';
