@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-09-04 23:00:42
+Date: 2019-09-09 00:10:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -47,6 +47,9 @@ INSERT INTO `admin_menu` VALUES ('9', '8', '0', '商品分类', 'fa-bars', '/goo
 INSERT INTO `admin_menu` VALUES ('10', '8', '0', '商品类型', 'fa-bars', '/goodsType', null, '2019-08-26 16:11:25', '2019-08-26 16:11:36');
 INSERT INTO `admin_menu` VALUES ('11', '8', '0', '商品品牌', 'fa-bars', '/goodsBrand', null, '2019-08-26 16:12:07', '2019-08-26 16:12:07');
 INSERT INTO `admin_menu` VALUES ('12', '8', '0', '商品', 'fa-bars', '/goods', null, '2019-08-26 16:12:27', '2019-08-26 16:12:27');
+INSERT INTO `admin_menu` VALUES ('13', '0', '0', '商城管理', 'fa-shopping-basket', null, null, '2019-09-08 09:31:11', '2019-09-08 09:33:32');
+INSERT INTO `admin_menu` VALUES ('14', '13', '0', '用户管理', 'fa-bars', '/users', null, '2019-09-08 09:34:24', '2019-09-08 09:35:29');
+INSERT INTO `admin_menu` VALUES ('15', '13', '0', '订单管理', 'fa-bars', '/orders', null, '2019-09-08 09:35:10', '2019-09-08 09:35:22');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -63,7 +66,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=259 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -326,6 +329,93 @@ INSERT INTO `admin_operation_log` VALUES ('255', '1', 'admin/auth/menu/5/edit', 
 INSERT INTO `admin_operation_log` VALUES ('256', '1', 'admin/auth/menu/5', 'PUT', '127.0.0.1', '{\"parent_id\":\"2\",\"title\":\"\\u6743\\u9650\",\"icon\":\"fa-ban\",\"uri\":\"auth\\/permissions\",\"roles\":[null],\"permission\":null,\"_token\":\"A0zwC6TwRUcxvtsiSyi38FBU8D383s1ys6U7AAwS\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-03 12:37:30', '2019-09-03 12:37:30');
 INSERT INTO `admin_operation_log` VALUES ('257', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-03 12:37:31', '2019-09-03 12:37:31');
 INSERT INTO `admin_operation_log` VALUES ('258', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-03 12:37:39', '2019-09-03 12:37:39');
+INSERT INTO `admin_operation_log` VALUES ('259', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-07 09:35:34', '2019-09-07 09:35:34');
+INSERT INTO `admin_operation_log` VALUES ('260', '1', 'admin/goods', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:44:22', '2019-09-07 09:44:22');
+INSERT INTO `admin_operation_log` VALUES ('261', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 09:46:29', '2019-09-07 09:46:29');
+INSERT INTO `admin_operation_log` VALUES ('262', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:46:34', '2019-09-07 09:46:34');
+INSERT INTO `admin_operation_log` VALUES ('263', '1', 'admin/goods/10020', 'PUT', '127.0.0.1', '{\"cate_id\":\"8\",\"name\":\"\\u7ea2\\u7cd6\\u7c89\",\"code\":\"P030101\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-2\",\"created_by\":\"1\",\"updated_by\":\"1\",\"content\":\"<p style=\\\"text-align: center;\\\"><img src=\\\"\\/Uploads\\/E\",\"keyword\":\"\\u7ea2\\u7cd6,\\u548c\\u7166\\u5802\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"36\",\"cost_price\":\"0\",\"store_nums\":\"884\",\"warning_line\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"500\",\"point\":\"36\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"96\",\"is_online\":\"on\",\"description\":\"\\u7cbe\\u9009\\u5ec9\\u6c5f\\u837b\\u8517\\u69a8\\u53d6\\uff0c\\u624b\\u5de5\\u71ac\\u5236\\u800c\\u6210\\uff0c\\u96f6\\u6dfb\\u52a0\\uff0c\\u4fdd\\u7559\\u8425\\u517b\\uff0c\\u539f\\u6c41\\u539f\\u5473\\uff0c\\u8272\\u6cfd\\u5448\\u8c46\\u6c99\\u7ea2\\uff0c\\u53e3\\u611f\\u6d53\\u9999\\uff0c\\u751c\\u800c\\u4e0d\\u817b\",\"_token\":\"i1WltIQhsREe2hqnbrTk7thSdNBlgrA60zyLQJC8\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/goods\"}', '2019-09-07 09:47:00', '2019-09-07 09:47:00');
+INSERT INTO `admin_operation_log` VALUES ('264', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 09:47:01', '2019-09-07 09:47:01');
+INSERT INTO `admin_operation_log` VALUES ('265', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 09:47:30', '2019-09-07 09:47:30');
+INSERT INTO `admin_operation_log` VALUES ('266', '1', 'admin/goods/10020', 'PUT', '127.0.0.1', '{\"cate_id\":\"8\",\"name\":\"\\u7ea2\\u7cd6\\u7c89\",\"code\":\"P030101\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-2\",\"created_by\":\"1\",\"updated_by\":\"1\",\"content\":\"<p style=\\\"text-align: center;\\\"><img src=\\\"\\/Uploads\\/E\",\"keyword\":\"\\u7ea2\\u7cd6,\\u548c\\u7166\\u5802\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"36\",\"cost_price\":\"0\",\"store_nums\":\"884\",\"warning_line\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"500\",\"point\":\"36\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"96\",\"is_online\":\"on\",\"description\":\"\\u7cbe\\u9009\\u5ec9\\u6c5f\\u837b\\u8517\\u69a8\\u53d6\\uff0c\\u624b\\u5de5\\u71ac\\u5236\\u800c\\u6210\\uff0c\\u96f6\\u6dfb\\u52a0\\uff0c\\u4fdd\\u7559\\u8425\\u517b\\uff0c\\u539f\\u6c41\\u539f\\u5473\\uff0c\\u8272\\u6cfd\\u5448\\u8c46\\u6c99\\u7ea2\\uff0c\\u53e3\\u611f\\u6d53\\u9999\\uff0c\\u751c\\u800c\\u4e0d\\u817b\",\"_token\":\"i1WltIQhsREe2hqnbrTk7thSdNBlgrA60zyLQJC8\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/goods\"}', '2019-09-07 09:47:39', '2019-09-07 09:47:39');
+INSERT INTO `admin_operation_log` VALUES ('267', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 09:47:40', '2019-09-07 09:47:40');
+INSERT INTO `admin_operation_log` VALUES ('268', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 09:47:51', '2019-09-07 09:47:51');
+INSERT INTO `admin_operation_log` VALUES ('269', '1', 'admin/goods/10020', 'PUT', '127.0.0.1', '{\"cate_id\":\"8\",\"name\":\"\\u7ea2\\u7cd6\\u7c89\",\"code\":\"P030101\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-2\",\"created_by\":\"1\",\"updated_by\":\"1\",\"content\":\"<p style=\\\"text-align: center;\\\"><img src=\\\"\\/Uploads\\/E\",\"keyword\":\"\\u7ea2\\u7cd6,\\u548c\\u7166\\u5802\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"36\",\"cost_price\":\"0\",\"store_nums\":\"884\",\"warning_line\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"500\",\"point\":\"36\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"96\",\"is_online\":\"on\",\"description\":\"\\u7cbe\\u9009\\u5ec9\\u6c5f\\u837b\\u8517\\u69a8\\u53d6\\uff0c\\u624b\\u5de5\\u71ac\\u5236\\u800c\\u6210\\uff0c\\u96f6\\u6dfb\\u52a0\\uff0c\\u4fdd\\u7559\\u8425\\u517b\\uff0c\\u539f\\u6c41\\u539f\\u5473\\uff0c\\u8272\\u6cfd\\u5448\\u8c46\\u6c99\\u7ea2\\uff0c\\u53e3\\u611f\\u6d53\\u9999\\uff0c\\u751c\\u800c\\u4e0d\\u817b\",\"_token\":\"i1WltIQhsREe2hqnbrTk7thSdNBlgrA60zyLQJC8\",\"_method\":\"PUT\"}', '2019-09-07 09:47:58', '2019-09-07 09:47:58');
+INSERT INTO `admin_operation_log` VALUES ('270', '1', 'admin/goods/10020/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 09:47:58', '2019-09-07 09:47:58');
+INSERT INTO `admin_operation_log` VALUES ('271', '1', 'admin/goods/10020', 'PUT', '127.0.0.1', '{\"cate_id\":\"8\",\"name\":\"\\u7ea2\\u7cd6\\u7c89\",\"code\":\"P030101\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-2\",\"created_by\":\"1\",\"updated_by\":\"1\",\"content\":\"<p style=\\\"text-align: center;\\\"><img src=\\\"\\/Uploads\\/E\",\"keyword\":\"\\u7ea2\\u7cd6,\\u548c\\u7166\\u5802\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"36\",\"cost_price\":\"0\",\"store_nums\":\"884\",\"warning_line\":null,\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"500\",\"point\":\"36\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"96\",\"is_online\":\"on\",\"description\":\"\\u7cbe\\u9009\\u5ec9\\u6c5f\\u837b\\u8517\\u69a8\\u53d6\\uff0c\\u624b\\u5de5\\u71ac\\u5236\\u800c\\u6210\\uff0c\\u96f6\\u6dfb\\u52a0\\uff0c\\u4fdd\\u7559\\u8425\\u517b\\uff0c\\u539f\\u6c41\\u539f\\u5473\\uff0c\\u8272\\u6cfd\\u5448\\u8c46\\u6c99\\u7ea2\\uff0c\\u53e3\\u611f\\u6d53\\u9999\\uff0c\\u751c\\u800c\\u4e0d\\u817b\",\"_token\":\"i1WltIQhsREe2hqnbrTk7thSdNBlgrA60zyLQJC8\",\"_method\":\"PUT\"}', '2019-09-07 09:48:49', '2019-09-07 09:48:49');
+INSERT INTO `admin_operation_log` VALUES ('272', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 09:48:49', '2019-09-07 09:48:49');
+INSERT INTO `admin_operation_log` VALUES ('273', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:48:53', '2019-09-07 09:48:53');
+INSERT INTO `admin_operation_log` VALUES ('274', '1', 'admin/goods', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:48:57', '2019-09-07 09:48:57');
+INSERT INTO `admin_operation_log` VALUES ('275', '1', 'admin/goods/10019', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:49:07', '2019-09-07 09:49:07');
+INSERT INTO `admin_operation_log` VALUES ('276', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 09:49:08', '2019-09-07 09:49:08');
+INSERT INTO `admin_operation_log` VALUES ('277', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 09:49:36', '2019-09-07 09:49:36');
+INSERT INTO `admin_operation_log` VALUES ('278', '1', 'admin/goods/10018', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 09:49:39', '2019-09-07 09:49:39');
+INSERT INTO `admin_operation_log` VALUES ('279', '1', 'admin/goods/10018', 'GET', '127.0.0.1', '[]', '2019-09-07 09:50:13', '2019-09-07 09:50:13');
+INSERT INTO `admin_operation_log` VALUES ('280', '1', 'admin/goods/10018', 'GET', '127.0.0.1', '[]', '2019-09-07 16:37:36', '2019-09-07 16:37:36');
+INSERT INTO `admin_operation_log` VALUES ('281', '1', 'admin/goods', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:37:40', '2019-09-07 16:37:40');
+INSERT INTO `admin_operation_log` VALUES ('282', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:37:57', '2019-09-07 16:37:57');
+INSERT INTO `admin_operation_log` VALUES ('283', '1', 'admin/goods/10018', 'PUT', '127.0.0.1', '{\"cate_id\":\"9\",\"name\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"code\":\"goods1495174273708\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-1\",\"created_by\":\"107\",\"updated_by\":\"1\",\"content\":null,\"keyword\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"28\",\"cost_price\":\"0\",\"store_nums\":\"64\",\"warning_line\":\"0\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"0\",\"point\":\"0\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"0\",\"is_online\":\"off\",\"description\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"_token\":\"W5Fa6cTwCUSo79LmuMlG0SWxHyWGxmmCdJEvh2oN\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/goods\"}', '2019-09-07 16:39:08', '2019-09-07 16:39:08');
+INSERT INTO `admin_operation_log` VALUES ('284', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 16:39:08', '2019-09-07 16:39:08');
+INSERT INTO `admin_operation_log` VALUES ('285', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:39:12', '2019-09-07 16:39:12');
+INSERT INTO `admin_operation_log` VALUES ('286', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:39:53', '2019-09-07 16:39:53');
+INSERT INTO `admin_operation_log` VALUES ('287', '1', 'admin/goods/10018', 'GET', '127.0.0.1', '[]', '2019-09-07 16:40:47', '2019-09-07 16:40:47');
+INSERT INTO `admin_operation_log` VALUES ('288', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:40:51', '2019-09-07 16:40:51');
+INSERT INTO `admin_operation_log` VALUES ('289', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:41:42', '2019-09-07 16:41:42');
+INSERT INTO `admin_operation_log` VALUES ('290', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:42:15', '2019-09-07 16:42:15');
+INSERT INTO `admin_operation_log` VALUES ('291', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:48:21', '2019-09-07 16:48:21');
+INSERT INTO `admin_operation_log` VALUES ('292', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:48:34', '2019-09-07 16:48:34');
+INSERT INTO `admin_operation_log` VALUES ('293', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:53:51', '2019-09-07 16:53:51');
+INSERT INTO `admin_operation_log` VALUES ('294', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:54:14', '2019-09-07 16:54:14');
+INSERT INTO `admin_operation_log` VALUES ('295', '1', 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:54:18', '2019-09-07 16:54:18');
+INSERT INTO `admin_operation_log` VALUES ('296', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-07 16:54:24', '2019-09-07 16:54:24');
+INSERT INTO `admin_operation_log` VALUES ('297', '1', 'admin/goods', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:56:51', '2019-09-07 16:56:51');
+INSERT INTO `admin_operation_log` VALUES ('298', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 16:56:54', '2019-09-07 16:56:54');
+INSERT INTO `admin_operation_log` VALUES ('299', '1', 'admin/goods/10018', 'PUT', '127.0.0.1', '{\"cate_id\":\"9\",\"name\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"code\":\"goods1495174273708\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-1\",\"created_by\":\"107\",\"updated_by\":\"1\",\"content\":null,\"keyword\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"28\",\"cost_price\":\"0\",\"store_nums\":\"64\",\"warning_line\":\"0\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"0\",\"point\":\"0\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"0\",\"is_online\":\"off\",\"description\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"_token\":\"W5Fa6cTwCUSo79LmuMlG0SWxHyWGxmmCdJEvh2oN\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/goods\"}', '2019-09-07 16:57:07', '2019-09-07 16:57:07');
+INSERT INTO `admin_operation_log` VALUES ('300', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 16:57:08', '2019-09-07 16:57:08');
+INSERT INTO `admin_operation_log` VALUES ('301', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 17:00:25', '2019-09-07 17:00:25');
+INSERT INTO `admin_operation_log` VALUES ('302', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '[]', '2019-09-07 17:02:05', '2019-09-07 17:02:05');
+INSERT INTO `admin_operation_log` VALUES ('303', '1', 'admin/goods/10018', 'PUT', '127.0.0.1', '{\"cate_id\":\"9\",\"name\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"code\":\"goods1495174273708\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-1\",\"created_by\":\"107\",\"updated_by\":\"1\",\"content\":null,\"keyword\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"28\",\"cost_price\":\"0\",\"store_nums\":\"64\",\"warning_line\":\"0\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"0\",\"point\":\"0\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"0\",\"is_online\":\"off\",\"description\":\"\\u9ec4\\u571f\\u7403\\u6e29\\u6577\\u62ab\\u80a9\",\"_token\":\"W5Fa6cTwCUSo79LmuMlG0SWxHyWGxmmCdJEvh2oN\",\"_method\":\"PUT\"}', '2019-09-07 17:02:15', '2019-09-07 17:02:15');
+INSERT INTO `admin_operation_log` VALUES ('304', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-07 17:02:16', '2019-09-07 17:02:16');
+INSERT INTO `admin_operation_log` VALUES ('305', '1', 'admin/goods/10018/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-07 17:02:19', '2019-09-07 17:02:19');
+INSERT INTO `admin_operation_log` VALUES ('306', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-08 09:13:52', '2019-09-08 09:13:52');
+INSERT INTO `admin_operation_log` VALUES ('307', '1', 'admin/goodsCate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:13:59', '2019-09-08 09:13:59');
+INSERT INTO `admin_operation_log` VALUES ('308', '1', 'admin/goodsBrand', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:14:04', '2019-09-08 09:14:04');
+INSERT INTO `admin_operation_log` VALUES ('309', '1', 'admin/goods', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:14:10', '2019-09-08 09:14:10');
+INSERT INTO `admin_operation_log` VALUES ('310', '1', 'admin/goods/10019/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:14:34', '2019-09-08 09:14:34');
+INSERT INTO `admin_operation_log` VALUES ('311', '1', 'admin/goods/10019', 'PUT', '127.0.0.1', '{\"cate_id\":\"6\",\"name\":\"\\u59dc\\u8d34\",\"code\":\"goods1495175628700\",\"type_id\":\"1\",\"brand_id\":\"3\",\"unit\":null,\"status\":\"-1\",\"created_by\":\"107\",\"updated_by\":\"1\",\"content\":\"<p>1<\\/p>\",\"keyword\":\"\\u59dc\\u8d34\",\"special_price\":\"0\",\"sell_price\":\"0\",\"market_price\":\"88\",\"cost_price\":\"0\",\"store_nums\":\"100\",\"warning_line\":\"0\",\"seo_title\":null,\"seo_keywords\":null,\"seo_description\":null,\"weight\":\"0\",\"point\":\"0\",\"visit\":\"0\",\"favorite\":\"0\",\"sort\":\"0\",\"is_online\":\"off\",\"description\":\"\\u59dc\\u8d34\",\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/goods\"}', '2019-09-08 09:15:10', '2019-09-08 09:15:10');
+INSERT INTO `admin_operation_log` VALUES ('312', '1', 'admin/goods', 'GET', '127.0.0.1', '[]', '2019-09-08 09:15:11', '2019-09-08 09:15:11');
+INSERT INTO `admin_operation_log` VALUES ('313', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:30:29', '2019-09-08 09:30:29');
+INSERT INTO `admin_operation_log` VALUES ('314', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\"}', '2019-09-08 09:31:11', '2019-09-08 09:31:11');
+INSERT INTO `admin_operation_log` VALUES ('315', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:31:11', '2019-09-08 09:31:11');
+INSERT INTO `admin_operation_log` VALUES ('316', '1', 'admin/auth/menu/13/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:31:15', '2019-09-08 09:31:15');
+INSERT INTO `admin_operation_log` VALUES ('317', '1', 'admin/auth/menu/13', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-blind\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-08 09:32:00', '2019-09-08 09:32:00');
+INSERT INTO `admin_operation_log` VALUES ('318', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:32:00', '2019-09-08 09:32:00');
+INSERT INTO `admin_operation_log` VALUES ('319', '1', 'admin/auth/menu/13/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:32:25', '2019-09-08 09:32:25');
+INSERT INTO `admin_operation_log` VALUES ('320', '1', 'admin/auth/menu/13', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u5546\\u57ce\\u7ba1\\u7406\",\"icon\":\"fa-shopping-basket\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-08 09:33:32', '2019-09-08 09:33:32');
+INSERT INTO `admin_operation_log` VALUES ('321', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:33:32', '2019-09-08 09:33:32');
+INSERT INTO `admin_operation_log` VALUES ('322', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"13\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":\"\\/admin\\/user\",\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\"}', '2019-09-08 09:34:24', '2019-09-08 09:34:24');
+INSERT INTO `admin_operation_log` VALUES ('323', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:34:24', '2019-09-08 09:34:24');
+INSERT INTO `admin_operation_log` VALUES ('324', '1', 'admin/auth/menu/14/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:34:29', '2019-09-08 09:34:29');
+INSERT INTO `admin_operation_log` VALUES ('325', '1', 'admin/auth/menu/14', 'PUT', '127.0.0.1', '{\"parent_id\":\"13\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":\"\\/admin\\/users\",\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-08 09:34:36', '2019-09-08 09:34:36');
+INSERT INTO `admin_operation_log` VALUES ('326', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:34:36', '2019-09-08 09:34:36');
+INSERT INTO `admin_operation_log` VALUES ('327', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"13\",\"title\":\"\\u8ba2\\u5355\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":\"\\/admin\\/orders\",\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\"}', '2019-09-08 09:35:10', '2019-09-08 09:35:10');
+INSERT INTO `admin_operation_log` VALUES ('328', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:35:10', '2019-09-08 09:35:10');
+INSERT INTO `admin_operation_log` VALUES ('329', '1', 'admin/auth/menu/15/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:35:16', '2019-09-08 09:35:16');
+INSERT INTO `admin_operation_log` VALUES ('330', '1', 'admin/auth/menu/15', 'PUT', '127.0.0.1', '{\"parent_id\":\"13\",\"title\":\"\\u8ba2\\u5355\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":\"\\/orders\",\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-08 09:35:22', '2019-09-08 09:35:22');
+INSERT INTO `admin_operation_log` VALUES ('331', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:35:22', '2019-09-08 09:35:22');
+INSERT INTO `admin_operation_log` VALUES ('332', '1', 'admin/auth/menu/14/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:35:25', '2019-09-08 09:35:25');
+INSERT INTO `admin_operation_log` VALUES ('333', '1', 'admin/auth/menu/14', 'PUT', '127.0.0.1', '{\"parent_id\":\"13\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-bars\",\"uri\":\"\\/users\",\"roles\":[null],\"permission\":null,\"_token\":\"EYHpK2mLHE7ZJBl5KDoidIlfRFv1vg42YR3ErYB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/beauty.cm\\/admin\\/auth\\/menu\"}', '2019-09-08 09:35:29', '2019-09-08 09:35:29');
+INSERT INTO `admin_operation_log` VALUES ('334', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-09-08 09:35:29', '2019-09-08 09:35:29');
+INSERT INTO `admin_operation_log` VALUES ('335', '1', 'admin/goodsBrand', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 09:38:11', '2019-09-08 09:38:11');
+INSERT INTO `admin_operation_log` VALUES ('336', '1', 'admin/goodsBrand', 'GET', '127.0.0.1', '[]', '2019-09-08 10:01:58', '2019-09-08 10:01:58');
+INSERT INTO `admin_operation_log` VALUES ('337', '1', 'admin/goodsBrand', 'GET', '127.0.0.1', '[]', '2019-09-08 10:02:26', '2019-09-08 10:02:26');
+INSERT INTO `admin_operation_log` VALUES ('338', '1', 'admin/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 10:02:30', '2019-09-08 10:02:30');
+INSERT INTO `admin_operation_log` VALUES ('339', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-09-08 10:02:51', '2019-09-08 10:02:51');
+INSERT INTO `admin_operation_log` VALUES ('340', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-09-08 10:04:17', '2019-09-08 10:04:17');
+INSERT INTO `admin_operation_log` VALUES ('341', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-09-08 10:06:29', '2019-09-08 10:06:29');
+INSERT INTO `admin_operation_log` VALUES ('342', '1', 'admin/goodsCate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 10:06:33', '2019-09-08 10:06:33');
+INSERT INTO `admin_operation_log` VALUES ('343', '1', 'admin/goodsCate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-09-08 10:06:40', '2019-09-08 10:06:40');
+INSERT INTO `admin_operation_log` VALUES ('344', '1', 'admin/users', 'GET', '127.0.0.1', '[]', '2019-09-08 10:08:11', '2019-09-08 10:08:11');
+INSERT INTO `admin_operation_log` VALUES ('345', '1', 'admin', 'GET', '127.0.0.1', '[]', '2019-09-08 15:05:37', '2019-09-08 15:05:37');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -490,7 +580,7 @@ CREATE TABLE `goods` (
   `code` varchar(32) DEFAULT '' COMMENT '产品编码',
   `type_id` int(11) DEFAULT '0' COMMENT '产品类型',
   `brand_id` int(11) DEFAULT '0' COMMENT '品牌id号',
-  `unit` varchar(10) NOT NULL DEFAULT '' COMMENT '单位',
+  `unit` varchar(10) DEFAULT '' COMMENT '单位',
   `status` tinyint(4) DEFAULT '0' COMMENT '会员状态',
   `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `updated_at` timestamp NULL DEFAULT NULL COMMENT '修改时间',
@@ -500,8 +590,8 @@ CREATE TABLE `goods` (
   `img` varchar(255) DEFAULT NULL,
   `keyword` varchar(255) DEFAULT '' COMMENT '商品关键词',
   `special_price` float(10,2) DEFAULT '0.00' COMMENT '特价',
-  `sell_price` float(10,2) NOT NULL DEFAULT '0.00' COMMENT '零售价',
-  `market_price` float(10,2) NOT NULL DEFAULT '0.00' COMMENT '市场价',
+  `sell_price` float(10,2) DEFAULT '0.00' COMMENT '零售价',
+  `market_price` float(10,2) DEFAULT '0.00' COMMENT '市场价',
   `cost_price` float(10,2) DEFAULT '0.00' COMMENT '成本价',
   `store_nums` int(11) DEFAULT '0' COMMENT '库存量',
   `warning_line` int(11) DEFAULT '0' COMMENT '预警线',
@@ -551,15 +641,9 @@ CREATE TABLE `goods` (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('10012', '6', '黄玉姜粉', 'P010101', '1', '3', '瓶', '1', '2019-08-20 21:41:23', '2019-09-02 15:33:28', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-24/594e830016883.png\" title=\"\" alt=\"1.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-28/5953ad8157911.png\" title=\"\" alt=\"5.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f0fe479fc2.png\" title=\"\" alt=\"2.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f0f8523256.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f21ee91d85.png\" title=\"\" alt=\"4.png\"/></p>', null, '黄玉姜粉,黄玉姜茶,和煦堂', '0.00', '0.00', '68.00', '0.00', '534', null, null, null, null, '380', '68', '0', '0', '98', '1', null, 'P010101_3', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiI1MDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMSIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIzODBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNjBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', 'images/7055c84605906ac8f154b32821eedc64.jpg', '0', '0', '黄玉姜粉', '精选无硫黄玉姜，自然晾晒，手工研磨，零添加，粉质细腻，汤色亮黄，姜味浓郁', '912', '0', null, '0', '0', '2', '', '1', '0', '0', '1', '0', '1', '0', '1', '1.00', '', '68.00', '68.00', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-29/59550a8fa59dc.png\" title=\"\" alt=\"食用方法.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-28/5953b4209e42f.png\" title=\"\" alt=\"注意事项.png\"/></p>', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/5956f349b4f73.png\" title=\"\" alt=\"使用实例_标题.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/5956f3637c3e0.png\" title=\"\" alt=\"使用实例_日常保健，消化不良.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/5956f8560c59c.png\" title=\"\" alt=\"使用实例_感冒咳嗽.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/5956fbc064b90.png\" title=\"\" alt=\"使用实例_小儿咳嗽，咽喉肿痛.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/59577256e013f.png\" title=\"\" alt=\"使用实例_宫冷不孕， 痛经.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-01/595793f0b9c5e.png\" title=\"\" alt=\"使用实例_面部暗疮， 脚臭.png\"/></p>', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '1');
-INSERT INTO `goods` VALUES ('10013', '6', '黄玉姜片', 'P010102', '1', '3', '瓶', '1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594fa45f5a1cb.png\" title=\"\" alt=\"1.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-28/5953adba11c36.png\" title=\"\" alt=\"5.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594fa4680e33b.png\" title=\"\" alt=\"2.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594fa47551139.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594fa4adbb360.png\" title=\"\" alt=\"4.png\"/></p>', null, '黄玉姜片,和煦堂', '0.00', '0.00', '48.00', null, '820', null, null, null, null, '260', '48', '0', '0', '97', '1', null, 'P010102_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNjBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', '/Uploads/Image/Goods/2017-06-23/594d2fe5d58a4.png', '0', '0', '黄玉姜片', '精选无硫黄玉姜，自然晾晒，零添加，甄选小姜切片，姜丝可见，富含纤维，汤色淡黄，味微辣芳香', '806', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '0', '0', '1', '1.00', '', '48.00', '48.00', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-30/59561f3b70acc.png\" title=\"\" alt=\"食用方法.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-28/5953b439da3ba.png\" title=\"\" alt=\"注意事项.png\"/></p>', '', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10014', '7', '轻松灸', 'P020101', '1', '3', '盒', '1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f75f121b51.png\" title=\"\" alt=\"1.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-27/5951b2be43515.png\" title=\"\" alt=\"6.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f76929244a.png\" title=\"\" alt=\"2.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f7615c5efe.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f77ea07b5f.png\" title=\"\" alt=\"4.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f7629acd51.png\" title=\"\" alt=\"4.png\"/></p>', null, '轻松灸,和煦堂,千年艾,艾艾贴,贴身灸', '0.00', '0.00', '168.00', null, '821', null, null, null, null, '800', '168', '0', '0', '99', '1', null, 'P020101_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiI1MDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMSIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIzODBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNjBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNTBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwNCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjIwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyMDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjIwMGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', '/Uploads/Image/Goods/2017-09-05/59ae12ec775b6.png', '0', '0', '轻松灸', '甄选正宗陈年蕲艾，零添加，非遗传承，使用简单，效果显著，居家旅行，随时随地，轻松一灸！', '923', '0', null, '0', '0', '0', '', '1', '0', '1', '1', '1', '0', '0', '1', '1.00', '', '168.00', '168.00', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f998387e1e.png\" title=\"\" alt=\"使用方法.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-26/59511ef0cc808.png\" title=\"\" alt=\"注意事项.png\"/></p>', '<p><strong>使用轻松灸，轻轻松松在家进行保健理疗：</strong></p><p><strong>一、消化系统</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/397/cate/case.html\" target=\"_self\" style=\"white-space: normal;\">● 慢性腹泻</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/138/cate/case.html\" target=\"_self\">● 胃痛</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/118/cate/case.html\" target=\"_self\">● 急性肠胃炎</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/119/cate/case.html\" target=\"_self\">● 慢性肠胃炎</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/121/cate/case.html\" target=\"_self\">● 胃溃疡</a></p><p><br/></p><p><strong>二、妇科问题</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/403/cate/case.html\" target=\"_self\">● 宫寒</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/128/cate/case.html\" target=\"_self\">● 乳腺增生</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/92/cate/case.html\" target=\"_self\">● 乳腺炎</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/127/cate/case.html\" target=\"_self\">● 痛经</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/123/cate/case.html\" target=\"_self\">● 月经不调</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/124/cate/case.html\" target=\"_self\">● 崩漏</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/122/cate/case.html\" target=\"_self\">● 附件炎</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/104/cate/case.html\" target=\"_self\">● 子宫肌瘤</a></p><p><br/></p><p><strong>三、呼吸系统</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/130/cate/case.html\" target=\"_self\">● 感冒流鼻涕</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/86/cate/case.html\" target=\"_self\">● 咳喘</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/134/cate/case.html\" target=\"_self\">● 鼻炎</a>&nbsp;&nbsp;&nbsp;&nbsp;</p><p><br/></p><p><strong>四、生殖泌尿系统</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/131/cate/case.html\" target=\"_self\">● 慢性肾炎</a>&nbsp;&nbsp;&nbsp;&nbsp;</p><p><br/></p><p><strong>五、神经系统</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/404/cate/case.html\" target=\"_self\">● 坐骨神经痛</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/214/cate/case.html\" target=\"_self\">● 失眠</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/136/cate/case.html\" target=\"_self\">● 忧郁症</a>&nbsp;&nbsp;&nbsp;&nbsp;</p><p><br/></p><p><strong>六、其他</strong></p><p><a href=\"http://wei.hexutang.cn/Case/info/artid/141/cate/case.html\" target=\"_self\">● 发烧</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/135/cate/case.html\" target=\"_self\">● 荨麻疹</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/91/cate/case.html\" target=\"_self\">● 皮肤病</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/88/cate/case.html\" target=\"_self\">● 暑湿症</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://wei.hexutang.cn/Case/info/artid/83/cate/case.html\" target=\"_self\">● 空调病</a></p>', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '0');
-INSERT INTO `goods` VALUES ('10015', '8', '红糖粉', 'P030101', '1', '3', '瓶', '1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f3ecfa509d.png\" title=\"\" alt=\"1.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-27/5951fcf71cfcc.png\" title=\"\" alt=\"5.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f3eda6f6f6.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f3ee6b0b86.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-25/594f3ef024458.png\" title=\"\" alt=\"4.png\"/></p>', null, '红糖,和煦堂', '0.00', '0.00', '36.00', null, '816', null, null, null, null, '500', '36', '0', '0', '96', '1', null, 'P030101_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiI1MDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNTBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', '/Uploads/Image/Goods/2017-06-23/594d3066c7f32.png', '0', '0', '红糖粉', '精选廉江荻蔗榨取，手工熬制而成，零添加，保留营养，原汁原味，色泽呈豆沙红，口感浓香，甜而不腻', '802', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '0', '0', '1', '1.00', '', '20.00', '36.00', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-30/5955fa840540a.png\" title=\"\" alt=\"食用方法.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-06-27/59526f1998a89.png\" title=\"\" alt=\"注意事项.png\"/></p>', '', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10016', '10', '红参片', 'P040101', '1', '3', '瓶', '-1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587a189f744.png\" title=\"\" alt=\"1.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587a2a7a7b3.png\" title=\"\" alt=\"5.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587a382b1e3.png\" title=\"\" alt=\"2.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587a4aaed3f.png\" title=\"\" alt=\"3.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587a58c96a0.png\" title=\"\" alt=\"4.png\"/></p>', null, '红参片,长白山,不添糖,和煦堂', '0.00', '0.00', '686.00', null, '999', null, null, null, null, '380', '686', '0', '0', '0', '0', null, 'P040101_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMSIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIzODBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', '/Uploads/Image/Goods/2017-07-01/5957ae443c956.png', '0', '0', '红参片', '精选长白山红参，参龄足，零添加，甄选切片，黄皮红心菊花纹，干度高不粘手，微苦回甘，参香浓郁。不添糖，真滋补！', '757', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '0', '0', '0', '1.00', '', '686.00', '686.00', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/59587f88cf530.png\" title=\"\" alt=\"食用方法.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/595887abe932e.png\" title=\"\" alt=\"注意事项.png\"/></p>', '<p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/5959030f6c862.png\" title=\"\" alt=\"红参食谱_标题.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/5959032abeaa0.png\" title=\"\" alt=\"使用实例_红参茶.png\"/></p><p style=\"text-align: center;\"><img src=\"/Uploads/Editor/Image/2017-07-02/595908ea07181.png\" title=\"\" alt=\"使用实例_红参炖鸡汤.png\"/></p>', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10017', '7', '艾贴', 'goods1495174043247', '1', '3', '', '-1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '107', '1', '', null, '艾贴', '0.00', '0.00', '48.00', '0.00', '97', '0', null, null, null, '0', '0', '0', '0', '0', '0', null, 'goods1495174043247_0', null, '/Uploads/Image/Goods/2017-05-23/5923a054ea043.jpg', '0', '0', '艾贴', '', '0', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '1', '0', '0', '1.00', '', '48.00', '48.00', '', '', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10018', '9', '黄土球温敷披肩', 'goods1495174273708', '1', '3', '', '-1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '107', '1', '', null, '黄土球温敷披肩', '0.00', '0.00', '28.00', '0.00', '64', '0', null, null, null, '0', '0', '0', '0', '0', '0', null, 'goods1495174273708_0', null, '/Uploads/Image/Goods/2017-05-24/59253dee81010.png', '0', '0', '黄土球温敷披', '黄土球温敷披肩', '0', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '1', '0', '0', '1.00', '', '28.00', '28.00', '', '', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10019', '6', '姜贴', 'goods1495175628700', '1', '3', '', '-1', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '107', '1', '<p>1</p>', null, '姜贴', '0.00', '0.00', '88.00', '0.00', '100', '0', null, null, null, '0', '0', '0', '0', '0', '0', null, 'goods1495175628700_0', null, '/Uploads/Image/Goods/2017-05-23/5923a06a83a28.jpg', '0', '0', '姜贴', '姜贴', '0', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '0', '0', '0', '1.00', '', '88.00', '88.00', '<p>说明1<br/></p>', '', '/Uploads/qrcode/d/4/d41d8cd98f00b204e9800998ecf8427e.png', '3');
-INSERT INTO `goods` VALUES ('10020', '8', '红糖粉', 'P030101', '1', '3', '', '-2', '2019-08-27 21:41:29', '2019-08-27 21:41:29', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/E', null, '红糖,和煦堂', '0.00', '0.00', '36.00', null, '884', null, null, null, null, '500', '36', '0', '0', '96', '1', null, 'P030101_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiI1MDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNTBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', '/Uploads/Image/Goods/2017-06-23/594d3066c7f32.png', '0', '0', '红糖粉', '精选廉江荻蔗榨取，手工熬制而成，零添加，保留营养，原汁原味，色泽呈豆沙红，口感浓香，甜而不腻', '0', '0', null, '0', '0', '2', '', '1', '0', '1', '0', '1', '0', '0', '1', '1.00', '', '20.00', '36.00', null, null, null, '0');
+INSERT INTO `goods` VALUES ('10018', '9', '黄土球温敷披肩', 'goods1495174273708', '1', '3', null, '-1', '2019-08-27 21:41:29', '2019-09-07 17:02:15', '107', '1', null, '[\"images\\/6976ead941a59ecf1cd0f367d0f6b53b.jpg\",\"images\\/77bf2192c7c435ff6bcdd1a178d74c86.jpg\"]', '黄土球温敷披肩', '0.00', '0.00', '28.00', '0.00', '64', '0', null, null, null, '0', '0', '0', '0', '0', '0', null, 'goods1495174273708_0', null, 'images/ef9526ece6b2bb67904e7400decdf597.jpg', '0', '0', '黄土球温敷披', '黄土球温敷披肩', '0', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '1', '0', '0', '1.00', '', '28.00', '28.00', '', '', null, '3');
+INSERT INTO `goods` VALUES ('10019', '6', '姜贴', 'goods1495175628700', '1', '3', null, '-1', '2019-08-27 21:41:29', '2019-09-08 09:15:10', '107', '1', '<p>1</p>', null, '姜贴', '0.00', '0.00', '88.00', '0.00', '100', '0', null, null, null, '0', '0', '0', '0', '0', '0', null, 'goods1495175628700_0', null, '/Uploads/Image/Goods/2017-05-23/5923a06a83a28.jpg', '0', '0', '姜贴', '姜贴', '0', '0', null, '0', '0', '2', '', '1', '0', '0', '0', '0', '0', '0', '0', '1.00', '', '88.00', '88.00', '<p>说明1<br/></p>', '', null, '3');
+INSERT INTO `goods` VALUES ('10020', '8', '红糖粉', 'P030101', '1', '3', null, '-2', '2019-08-27 21:41:29', '2019-09-07 09:48:49', '1', '1', '<p style=\"text-align: center;\"><img src=\"/Uploads/E', null, '红糖,和煦堂', '0.00', '0.00', '36.00', '0.00', '884', null, null, null, null, '500', '36', '0', '0', '96', '1', null, 'P030101_1', 'W3siaWQiOiIxMiIsIm5hbWUiOiLlh4Dph40iLCJ0eXBlIjoiMSIsInNwZWN2YWwiOltbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMCIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiI1MDBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9XSxbeyJuYW1lIjoidmFsX2lkIiwidmFsdWUiOiIxMDAwMyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoidmFsX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9uYW1lIiwidmFsdWUiOiIyNTBnIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJjaGFuZ2VfaW1nIiwidmFsdWUiOiIiLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6InNwZWNfdmFsdWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9XV19XQ==', 'images/efb73b97e2ec3864a51fa92b0a334aca.jpg', '0', '0', '红糖粉', '精选廉江荻蔗榨取，手工熬制而成，零添加，保留营养，原汁原味，色泽呈豆沙红，口感浓香，甜而不腻', '0', '0', null, '0', '0', '2', '', '1', '0', '1', '0', '1', '0', '0', '1', '1.00', '', '20.00', '36.00', null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for goodsbrand
@@ -2107,26 +2191,8 @@ CREATE TABLE `products` (
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES ('10012', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '26.00', null, '73', null, null, '1', 'goods1494550975867_0', null, null, '0', null, '0.00', '黄玉姜粉', '0', '0', '2', '', '', '75', '0.00', '0');
-INSERT INTO `products` VALUES ('10013', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '88.00', null, '96', null, null, '1', 'goods1494551292545_0', null, null, '0', null, '0.00', '黄玉姜片', '0', '0', '2', '', '', '18', '0.00', '0');
-INSERT INTO `products` VALUES ('10014', '10014', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '58.00', null, '98', null, null, '1', 'goods1494551368232_0', null, null, '0', null, '0.00', '轻松灸', '0', '0', '2', '', '', '33', '0.00', '0');
-INSERT INTO `products` VALUES ('10015', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '98.00', null, '107', null, null, '1', 'goods1494551442672_0', null, null, '0', null, '0.00', '红糖粉', '0', '0', '2', '', '', '1', '0.00', '0');
-INSERT INTO `products` VALUES ('10016', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '180.00', null, '0', null, '0', '1', 'goods1494982132445_0', null, null, '0', null, '0.00', '红参', '0', '0', '2', '', '', '0', '0.00', '0');
-INSERT INTO `products` VALUES ('10017', '10017', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '48.00', null, '97', null, '0', '1', 'goods1495174043247_0', null, null, '0', null, '0.00', '艾贴', '0', '0', '2', '', '', '3', '0.00', '3');
 INSERT INTO `products` VALUES ('10018', '10018', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '28.00', null, '64', null, '0', '1', 'goods1495174273708_0', null, null, '0', null, '0.00', '黄土球温敷披肩', '0', '0', '2', '', '', '41', '0.00', '3');
 INSERT INTO `products` VALUES ('10019', '10019', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '88.00', null, '100', null, '0', '1', 'goods1495175628700_0', null, null, '0', null, '0.00', '姜贴', '0', '0', '2', '', '', '0', '0.00', '3');
-INSERT INTO `products` VALUES ('10029', '10016', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '686.00', null, '999', null, '380', '1', 'P040101_1', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAxIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMzgwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMzgwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '686.00', '红参片（大）', '0', '0', '2', '', null, '1', '0.00', '3');
-INSERT INTO `products` VALUES ('10020', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '68.00', null, '534', null, '380', '1', 'P010101_3', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAyIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjYwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjYwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '68.00', '111', '0', '0', '2', '', null, '420', '0.00', '1');
-INSERT INTO `products` VALUES ('10030', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '68.00', null, '534', null, '380', '1', 'P010101_1', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAwIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '68.00', '222', '0', '0', '2', '', null, '0', '0.00', '1');
-INSERT INTO `products` VALUES ('10021', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '68.00', null, '534', null, '380', '1', 'P010101_5', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDA0Iiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjAwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjIwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjAwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '68.00', '', '0', '0', '0', '', null, '191', '0.00', '0');
-INSERT INTO `products` VALUES ('10022', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '0.00', null, '0', null, null, '1', 'goods1495772155802_0', null, null, '0', null, '0.00', '黄玉姜粉', '0', '0', '2', '', '', '0', '0.00', '0');
-INSERT INTO `products` VALUES ('10023', '10013', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '48.00', null, '820', null, '260', '1', 'P010102_1', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAyIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjYwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjI2MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjYwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '48.00', '黄玉姜片（大）', '0', '0', '2', '', null, '123', '0.00', '3');
-INSERT INTO `products` VALUES ('10024', '10015', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '2010', '0.00', '0.00', '36.00', null, '816', null, '500', '1', 'P030101_1', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAwIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '36.00', '红糖粉（大）', '0', '0', '2', '', null, '144', '0.00', '3');
-INSERT INTO `products` VALUES ('10025', '10015', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '2010', '0.00', '0.00', '20.00', null, '828', null, '250', '1', 'P030101_2', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAzIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjUwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjUwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '20.00', '红糖粉（小）', '0', '0', '2', '', null, '119', '0.00', '3');
-INSERT INTO `products` VALUES ('10026', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '168.00', null, '821', null, '800', '1', 'P020101_5', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDA0Iiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjAwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjIwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjAwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '168.00', '', '0', '0', '0', '', null, '271', '0.00', '0');
-INSERT INTO `products` VALUES ('10027', '10015', '-3', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '36.00', null, '884', null, '500', '1', 'P030101_1', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAwIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjUwMGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiNTAwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '36.00', '红糖粉（大）', '0', '0', '2', '', null, '1', '0.00', '0');
-INSERT INTO `products` VALUES ('10028', '10015', '-3', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '20.00', null, '903', null, '250', '1', 'P030101_2', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAzIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMjUwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjI1MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMjUwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '20.00', '红糖粉（小）', '0', '0', '2', '', null, '1', '0.00', '0');
-INSERT INTO `products` VALUES ('10031', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0.00', '0.00', '68.00', null, '534', null, '380', '1', 'P010101_2', 'W1t7Im5hbWUiOiJ2YWxfaWQiLCJ2YWx1ZSI6IjEwMDAxIiwic3BlY2lkIjoiMTIifSx7Im5hbWUiOiJ2YWxfbmFtZSIsInZhbHVlIjoiMzgwZyIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoiY2hhbmdlX25hbWUiLCJ2YWx1ZSI6IjM4MGciLCJzcGVjaWQiOiIxMiJ9LHsibmFtZSI6ImNoYW5nZV9pbWciLCJ2YWx1ZSI6IiIsInNwZWNpZCI6IjEyIn0seyJuYW1lIjoic3BlY192YWx1ZSIsInZhbHVlIjoiMzgwZyIsInNwZWNpZCI6IjEyIn1dXQ==', null, '0', null, '68.00', '333', '0', '0', '2', '', null, '0', '0.00', '1');
 
 -- ----------------------------
 -- Table structure for products_spec
@@ -2149,235 +2215,6 @@ CREATE TABLE `products_spec` (
 -- ----------------------------
 -- Records of products_spec
 -- ----------------------------
-INSERT INTO `products_spec` VALUES ('1', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('2', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('3', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('4', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('5', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('6', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('7', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('8', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('9', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('10', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('11', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('12', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('13', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('14', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('15', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('16', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('17', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('18', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('19', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('20', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('21', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('22', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('23', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('24', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('25', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('26', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('27', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('28', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('29', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('30', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('31', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('32', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('33', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('34', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('35', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('36', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('37', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('38', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('39', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('40', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('41', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('42', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('43', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('44', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('45', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('46', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('47', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('48', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('49', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('50', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('51', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('52', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('53', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('54', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('55', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('56', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('57', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('58', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('59', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('60', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('61', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('62', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('63', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('64', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('65', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('66', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('67', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('68', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('69', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('70', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('71', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('72', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('73', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('74', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('75', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('76', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('77', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('78', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('79', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('80', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('81', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('82', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('83', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('84', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('85', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('86', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('87', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('88', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('89', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('90', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('91', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('92', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('93', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('94', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('95', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('96', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('97', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('98', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('99', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('100', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('101', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('102', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('103', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('104', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('105', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('106', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('107', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('108', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('109', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('110', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('111', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('112', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('113', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('114', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('115', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('116', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('117', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('118', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('119', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('120', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('121', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('122', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('123', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('124', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('125', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('126', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('127', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('128', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('129', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('130', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('131', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('132', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('133', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('134', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('135', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('136', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('137', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('138', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('139', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('140', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('141', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('142', '10020', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10027');
-INSERT INTO `products_spec` VALUES ('143', '10020', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10028');
-INSERT INTO `products_spec` VALUES ('144', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10000', '10027');
-INSERT INTO `products_spec` VALUES ('145', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10003', '10028');
-INSERT INTO `products_spec` VALUES ('146', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10000', '10027');
-INSERT INTO `products_spec` VALUES ('147', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10003', '10028');
-INSERT INTO `products_spec` VALUES ('148', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('149', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('150', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('151', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('152', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('153', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('154', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('155', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('156', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('157', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('158', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('159', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('160', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('161', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('162', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('163', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('164', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('165', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('166', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('167', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('168', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('169', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('170', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('171', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('172', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('173', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('174', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('175', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('176', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('177', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('178', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('179', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('180', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('181', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('182', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('183', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('184', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('185', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('186', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('187', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('188', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('189', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('190', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('191', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('192', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('193', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('194', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('195', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '114', '114', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('196', '10016', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('197', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('198', '10015', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('199', '10013', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('200', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('201', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('202', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('203', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('204', '10013', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10023');
-INSERT INTO `products_spec` VALUES ('205', '10015', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10024');
-INSERT INTO `products_spec` VALUES ('206', '10015', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10025');
-INSERT INTO `products_spec` VALUES ('207', '10016', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10029');
-INSERT INTO `products_spec` VALUES ('208', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10026');
-INSERT INTO `products_spec` VALUES ('209', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10026');
-INSERT INTO `products_spec` VALUES ('210', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10026');
-INSERT INTO `products_spec` VALUES ('211', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10026');
-INSERT INTO `products_spec` VALUES ('212', '10014', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10026');
-INSERT INTO `products_spec` VALUES ('213', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('214', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('215', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('216', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10021');
-INSERT INTO `products_spec` VALUES ('217', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10021');
-INSERT INTO `products_spec` VALUES ('218', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('219', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10020');
-INSERT INTO `products_spec` VALUES ('220', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10020');
-INSERT INTO `products_spec` VALUES ('221', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10020');
-INSERT INTO `products_spec` VALUES ('222', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10003', '10021');
-INSERT INTO `products_spec` VALUES ('223', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10004', '10021');
-INSERT INTO `products_spec` VALUES ('224', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10030');
-INSERT INTO `products_spec` VALUES ('225', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10031');
-INSERT INTO `products_spec` VALUES ('226', '10012', '-2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10020');
-INSERT INTO `products_spec` VALUES ('227', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10002', '10020');
-INSERT INTO `products_spec` VALUES ('228', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10000', '10030');
-INSERT INTO `products_spec` VALUES ('229', '10012', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', '1', '12', '10001', '10031');
 
 -- ----------------------------
 -- Table structure for products_virtual
@@ -2403,9 +2240,6 @@ CREATE TABLE `products_virtual` (
 -- ----------------------------
 -- Records of products_virtual
 -- ----------------------------
-INSERT INTO `products_virtual` VALUES ('4', 'pro_vr_1496715442573_1', '10020', '1', '10026', '10', '1', '-1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1496715460', '1', '1');
-INSERT INTO `products_virtual` VALUES ('5', 'pro_vr_1496715442573_1', '10020', '1', '10026', '10', '1', '-1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1496732448', '1', '1');
-INSERT INTO `products_virtual` VALUES ('6', 'pro_vr_1496715442573_1', '10020', '1', '10026', '10', '1', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1496733715', '1', '1');
 
 -- ----------------------------
 -- Table structure for profiles
@@ -3048,6 +2882,7 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plaintext_password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '密码明文',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -3059,6 +2894,7 @@ CREATE TABLE `users` (
   `vipcode` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '会员号',
   `card_no` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '实物会员卡号码',
   `last_login_time` int(10) unsigned DEFAULT '0' COMMENT '最后登录时间',
+  `ip` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -3066,7 +2902,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'test1', '469514939@qq.com', 'admin', '1', '2019-08-15 13:46:35', '2019-08-15 13:46:35', '', null, null, '', '', null, null, '0');
+INSERT INTO `users` VALUES ('1', 'test1', '469514939@qq.com', 'admin', null, '1', '2019-08-15 13:46:35', '2019-08-15 13:46:35', '', null, null, '', '', null, null, '0', null);
 
 -- ----------------------------
 -- Table structure for user_account
@@ -3307,3 +3143,67 @@ INSERT INTO `user_recharge_log` VALUES ('10160', '1708309219', '10006', '1.01', 
 INSERT INTO `user_recharge_log` VALUES ('10161', '1708314160', '10002', '1.00', '72.56', '2', '微支付充值', '1504144854', null, null, '1', '1504144854', null, '0', null, null);
 INSERT INTO `user_recharge_log` VALUES ('10162', '1709078504', '10009', '1.00', '1.30', '2', '微支付充值', '1504749584', null, null, '1', '1504749584', null, '0', null, null);
 INSERT INTO `user_recharge_log` VALUES ('10163', '0', '10009', '-1.00', '0.30', '6', '余额提现', '1504749841', '0', '', '1', '1504749841', '10009', '0', null, '');
+
+-- ----------------------------
+-- Table structure for wxusers
+-- ----------------------------
+DROP TABLE IF EXISTS `wxusers`;
+CREATE TABLE `wxusers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'wxmp用户列表',
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '分配的用户ID',
+  `wxid` int(11) NOT NULL DEFAULT '0' COMMENT '微信帐号ID',
+  `nickname` varchar(64) DEFAULT NULL COMMENT '用户昵称',
+  `username` varchar(64) DEFAULT NULL COMMENT '用户名称',
+  `fakeid` varchar(32) DEFAULT NULL,
+  `openid` varchar(64) DEFAULT NULL,
+  `alias` varchar(64) DEFAULT NULL COMMENT '备注名称',
+  `remarkname` varchar(64) DEFAULT NULL COMMENT '备注名字,公众号运营者对粉丝的备注',
+  `gender` varchar(32) DEFAULT NULL COMMENT '性别( 1=男 2=女 )',
+  `wxnum` varchar(128) DEFAULT NULL COMMENT '微信账号',
+  `email` varchar(64) DEFAULT NULL COMMENT '邮件',
+  `mobile` varchar(32) DEFAULT NULL COMMENT '手机号码',
+  `avatar` varchar(255) DEFAULT NULL COMMENT '头像图片地址(远程)',
+  `localavatar` varchar(255) DEFAULT NULL COMMENT '头像图片地址(本地)',
+  `groupid` int(11) DEFAULT '0' COMMENT '所属用户分组id',
+  `groupname` varchar(32) DEFAULT NULL COMMENT '分组名字',
+  `signature` varchar(255) DEFAULT NULL COMMENT '签名',
+  `countryid` int(11) DEFAULT NULL COMMENT '所在国家ID',
+  `country` varchar(64) DEFAULT NULL COMMENT '国家',
+  `province` varchar(64) DEFAULT NULL COMMENT '省',
+  `city` varchar(64) DEFAULT NULL COMMENT '城市',
+  `provinceid` int(11) DEFAULT NULL COMMENT '所属省份',
+  `cityid` int(11) DEFAULT NULL COMMENT '所属城市',
+  `areaid` int(11) DEFAULT NULL COMMENT '所属地区',
+  `language` varchar(32) DEFAULT NULL COMMENT '语言',
+  `subscribed` tinyint(1) NOT NULL DEFAULT '1' COMMENT '关注 0=未关注 1=关注',
+  `subscribedcount` int(11) NOT NULL DEFAULT '0' COMMENT '关注次数',
+  `subscribetime` int(11) DEFAULT NULL COMMENT '关注时间',
+  `unsubscribetime` int(11) DEFAULT NULL COMMENT '取消关注时间',
+  `vipcode` varchar(64) DEFAULT NULL COMMENT '会员卡号',
+  `vipclass` smallint(4) NOT NULL DEFAULT '0' COMMENT '会员级别',
+  `viptime` int(11) DEFAULT NULL COMMENT '入会时间',
+  `status` tinyint(1) DEFAULT '1' COMMENT '状态( 1=有效 0=无效 )',
+  `created_by` int(11) DEFAULT NULL COMMENT '创建者',
+  `created_time` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updated_by` int(11) DEFAULT NULL COMMENT '更新者',
+  `updated_time` int(11) DEFAULT NULL COMMENT '更新时间',
+  `lastchattime` int(11) DEFAULT NULL COMMENT '用户最后说话的时间',
+  `synctime` int(11) DEFAULT NULL COMMENT '同步用户信息',
+  `unionid` varchar(64) DEFAULT NULL COMMENT 'unionid	只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段',
+  `recommendopenid` varchar(64) DEFAULT NULL COMMENT '推荐者openid',
+  `recommenduid` int(11) NOT NULL DEFAULT '0' COMMENT '推荐者uid',
+  PRIMARY KEY (`id`),
+  KEY `status_2` (`wxid`,`status`),
+  KEY `status_3` (`wxid`,`status`,`fakeid`,`openid`),
+  KEY `status_4` (`wxid`,`status`,`nickname`),
+  KEY `status_5` (`wxid`,`groupid`,`status`),
+  KEY `wxid` (`wxid`,`openid`,`status`),
+  KEY `uid` (`uid`)
+) ENGINE=MyISAM AUTO_INCREMENT=12165 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='微信公众账号用户信息表';
+
+-- ----------------------------
+-- Records of wxusers
+-- ----------------------------
+INSERT INTO `wxusers` VALUES ('10001', '1', '2000', '默认', '', '', 'test', '', '', '1', '', '', '', 'http://wx.qlogo.cn/mmopen/MnUQbmNbGufdwuQ2bU1haQQt6JGOmwHHgE0aefd7kZzp24NwpERiajXstH9v6oc3RlnQiahWoiaibwNqBlC0QAxA4VicKR2pr8YU8/0', '/Uploads/wxavatar/2000/oUfF600/wxavatar_oUfF6000s2ONmRH_GMqAoiTTzcb8.jpg', '0', '', '', null, '中国', '广东', '东莞', null, null, null, 'zh_CN', '1', '1', '1496404477', null, '', '0', null, '1', '1', '1497006080', '1', '1508460008', '1508460005', '1508460008', '', '', '0');
+INSERT INTO `wxusers` VALUES ('10002', '10002', '2000', 'run', '', '', 'oUfF600yuGhjPtCD-eJtuQgxiDyA', '', '', '1', '', '', '', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLCazN8iajAyZE9OXlXicVRhDUQTMBjLNE30GQaicS1LfO7VsLL9pE9JhVoLbjUBXlibxnrUlpvSicJInLA/0', '/Uploads/wxavatar/2000/oUfF600/wxavatar_oUfF600yuGhjPtCD-eJtuQgxiDyA.jpg', '0', '', '', null, '中国', '广东', '东莞', null, null, null, 'zh_CN', '1', '1', '1496404424', null, '', '0', null, '1', '1', '1497006081', '1', '1507971945', '1508053925', '1507971945', '', '', '0');
+INSERT INTO `wxusers` VALUES ('10003', '10001', '2000', '淘沙', '', '', 'oUfF6000s2ONmRH_GMqAoiTTzcb8', '', '', '1', '', '', '', 'http://wx.qlogo.cn/mmopen/MnUQbmNbGufdwuQ2bU1haQQt6JGOmwHHgE0aefd7kZzp24NwpERiajXstH9v6oc3RlnQiahWoiaibwNqBlC0QAxA4VicKR2pr8YU8/0', '/Uploads/wxavatar/2000/oUfF600/wxavatar_oUfF6000s2ONmRH_GMqAoiTTzcb8.jpg', '0', '', '', null, '中国', '广东', '东莞', null, null, null, 'zh_CN', '1', '1', '1496404477', null, '', '0', null, '1', '1', '1497006080', '1', '1508460008', '1508460005', '1508460008', '', '', '0');
