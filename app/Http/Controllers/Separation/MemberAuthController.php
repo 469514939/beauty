@@ -37,7 +37,9 @@ class MemberAuthController extends Controller
         $password = '123456';
         $openid = trim($request->openid);
         $user = DB::table("wxusers")->where('openid',$openid)->first();
-
+        if(empty($openid)){//已经注册
+            return dataResult('','openid不能为空!',0,503);
+        }
 
         if(!empty($user)){//已经注册
             return dataResult('','该微信已经注册!',0,503);
