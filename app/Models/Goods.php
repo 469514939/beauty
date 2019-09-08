@@ -28,4 +28,18 @@ class Goods extends Model
         // return $this->hasOne(GoodsBrand::class);
         return $this->hasOne(GoodsBrand::class, 'id', 'brand_id');
     }
+
+
+
+    public function setImgAttribute($img)
+    {
+        if (is_array($img)) {
+            $this->attributes['img'] = json_encode($img);
+        }
+    }
+
+    public function getImgAttribute($img)
+    {
+        return json_decode($img, true);
+    }
 }

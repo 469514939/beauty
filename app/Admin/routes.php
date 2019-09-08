@@ -20,4 +20,6 @@ Route::group([
     $router->resource('goodsBrand', GoodsBrandController::class);
     $router->resource('goods', GoodsController::class);
 
+    $router->resource('users', UsersController::class);
+
 });

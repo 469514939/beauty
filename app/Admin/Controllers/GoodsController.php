@@ -75,7 +75,6 @@ class GoodsController extends AdminController
         $show->field('created_by', __('Created by'));
         $show->field('updated_by', __('Updated by'));
         $show->field('content', __('Content'));
-        $show->field('img', __('Img'));
         $show->field('keyword', __('Keyword'));
         $show->field('special_price', __('Special price'));
         $show->field('sell_price', __('Sell price'));
@@ -92,7 +91,8 @@ class GoodsController extends AdminController
         $show->field('favorite', __('Favorite'));
         $show->field('sort', __('Sort'));
         $show->field('is_online', __('Is online'));
-        $form->text('mainpic', __('Mainpic'));
+        $show->image('mainpic', __('Mainpic'));
+        $show->field('img', __('Img'));
         $show->field('description', __('Description'));
 
         return $show;
@@ -119,7 +119,6 @@ class GoodsController extends AdminController
         $form->number('created_by', __('Created by'));
         $form->number('updated_by', __('Updated by'));
         $form->textarea('content', __('Content'));
-        $form->image('img', __('Img'));
         $form->text('keyword', __('Keyword'));
         $form->decimal('special_price', __('Special price'))->default(0.00);
         $form->decimal('sell_price', __('Sell price'))->default(0.00);
@@ -136,10 +135,8 @@ class GoodsController extends AdminController
         $form->number('favorite', __('Favorite'));
         $form->number('sort', __('Sort'))->default(1);
         $form->switch('is_online', __('Is online'));
-        // $form->textarea('sale_protection', __('Sale protection'));
-        // $form->text('pro_no', __('Pro no'));
-        // $form->textarea('products', __('Products'));
         $form->image('mainpic')->uniqueName();
+        $form->multipleImage('img', '配图');
         $form->text('description', __('Description'));
 
         return $form;
