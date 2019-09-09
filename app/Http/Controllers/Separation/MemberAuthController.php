@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
 use App\WxUsers;
-use App\Users;
+use App\User;
 
 class MemberAuthController extends Controller
 {
@@ -31,13 +31,17 @@ class MemberAuthController extends Controller
 
         $password = '123456';
         $openid = trim($request->openid);
-        $user = DB::table("wxusers")->where('openid',$openid)->first();
+        $wxuser = DB::table("wxusers")->where('openid',$openid)->first();
         if(empty($openid)){//已经注册
             return dataResult('','openid不能为空!',0,503);
         }
 
-        if(!empty($user)){//已经注册
-            return dataResult('','该微信已经注册!',0,503);
+        if(!empty($wxuser)){//已经注册
+            $user = User::find($wxuser->uid);
+            $request->offsetSet('name', $user->name);
+            $request->offsetSet('password', $user->plaintext_password);
+            return $this->login($request);
+            // return dataResult('','该微信已经注册!',0,503);
         }else{//未注册
             $user = new User();
 
@@ -47,23 +51,24 @@ class MemberAuthController extends Controller
             $data['plaintext_password'] = $password;
             $data['ip'] = $request->getClientIp();
             $data['status'] = 1;
+            $data['name'] = 'user'.uniqid();;
 
             //wxusers表保存数据
-            $wxdata = [];
-            $wxdata['wxid'] = 2000;
-            $wxdata['openid'] = $openid;
-            $wxdata['nickname'] = $request->nickName;
-            $wxdata['avatar'] = $request->avatarUrl;
-            $wxdata['gender'] = $request->gender;
-            $wxdata['unionid'] = $request->unionid;
-            $wxdata['city'] = $request->city;
-            $wxdata['province'] = $request->province;
-            $wxdata['country'] = $request->country;
+            $wxuser = new WxUsers();
+            $wxuser->wxid = '2000';
+            $wxuser->openid = $openid;
+            $wxuser->nickname = $request->nickName;
+            $wxuser->avatar = $request->avatarUrl;
+            $wxuser->gender = $request->gender;
+            $wxuser->unionid = $request->unionid;
+            $wxuser->city = $request->city;
+            $wxuser->province = $request->province;
+            $wxuser->country = $request->country;
 
             DB::beginTransaction();
-            if($user = $user->create($data)){
+            if($user = User::create($data)){
                 $wxdata['uid'] = $user->id;
-                if ($res = $user->patientdata()->create($wxdata)){
+                if ($res = $user->wxUsers()->save($wxuser)){
                     DB::commit();
                     $request->offsetSet('name', $user->name);
                     $request->offsetSet('password', $user->plaintext_password);
@@ -90,7 +95,7 @@ class MemberAuthController extends Controller
                                 ->where('name',$request->name)
                                 ->orWhere('mobile',$request->name);
                         })
-                      ->select('ip','mobile','login_at','first_login_chk','name','mobile','is_admin','plaintext_password')->first();
+                      ->select('ip','mobile','login_at','name','mobile','plaintext_password')->first();
         if(empty($login_user)){
             return response()->json(dataResult('','帐号或密码错误',0,503));
         }

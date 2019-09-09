@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Separation;
 
 use App\Addr;
 use App\Area;
-use App\Users;
+use App\User;
 use Maatwebsite\Excel\Facades\Excel;
 use Validator;
 use Illuminate\Http\Request;
