@@ -19,6 +19,7 @@ class ComposerStaticInitf0598cee7183dc8667180346f21027c7
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '4e8671d7be9056dcd04ddd9e8e15f9cc' => __DIR__ . '/..' . '/encore/laravel-admin/src/helpers.php',
         'f960e77410032f236cef8c56617b313e' => __DIR__ . '/..' . '/overtrue/laravel-lang/src/helpers.php',
+        'fdb3b5f01b3ed818a713c5450349237f' => __DIR__ . '/../..' . '/app/Helpers/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -374,7 +375,7 @@ class ComposerStaticInitf0598cee7183dc8667180346f21027c7
         'App\\Admin\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeController.php',
         'App\\Admin\\Controllers\\MovieController' => __DIR__ . '/../..' . '/app/Admin/Controllers/MovieController.php',
         'App\\Admin\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Admin/Controllers/PostController.php',
-        'App\\Admin\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Admin/Controllers/UserController.php',
+        'App\\Admin\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Admin/Controllers/UsersController.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Separation/AuthController.php',
@@ -388,6 +389,7 @@ class ComposerStaticInitf0598cee7183dc8667180346f21027c7
         'App\\Http\\Controllers\\Separation\\QygController' => __DIR__ . '/../..' . '/app/Http/Controllers/Separation/QygController.php',
         'App\\Http\\Controllers\\Separation\\QygInfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Separation/QygInfoController.php',
         'App\\Http\\Controllers\\Separation\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Separation/UserController.php',
+        'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\CORS' => __DIR__ . '/../..' . '/app/Http/Middleware/CORS.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

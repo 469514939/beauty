@@ -3,11 +3,6 @@
 namespace App\Http\Controllers\Separation;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Order;
-use App\Admin;
-use App\Company;
-use App\Area;
 use DB;
 use Session;
 use Illuminate\Support\Facades\Hash;
