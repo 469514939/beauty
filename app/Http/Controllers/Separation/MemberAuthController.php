@@ -37,7 +37,7 @@ class MemberAuthController extends Controller
         }
 
         if(!empty($wxuser)){//已经注册
-            $user = Users::find($wxuser->uid);
+            $user = Users::find($wxuser->user_id);
             $request->offsetSet('name', $user->name);
             $request->offsetSet('password', $user->plaintext_password);
             return $this->login($request);
@@ -67,7 +67,7 @@ class MemberAuthController extends Controller
 
             DB::beginTransaction();
             if($user = Users::create($data)){
-                $wxdata['uid'] = $user->id;
+                $wxdata['user_id'] = $user->id;
                 if ($res = $user->wxUsers()->save($wxuser)){
                     DB::commit();
                     // $request->offsetSet('name', $user->name);

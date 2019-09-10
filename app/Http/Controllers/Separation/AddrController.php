@@ -164,8 +164,8 @@ class AddrController extends Controller
         }
 
         $addr = Addr::find($id);
-        $uid = $addr->user_id;
-        Addr::whereRaw('user_id = ? and is_default = 1',[$uid])->update(['is_default'=>0]);
+        $user_id = $addr->user_id;
+        Addr::whereRaw('user_id = ? and is_default = 1',[$user_id])->update(['is_default'=>0]);
         $res = Addr::where('id',$id)->update(['is_default'=>1]);
         if($res){
             return dataResult($res,'更新成功',1,200);

@@ -1,17 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class WxUsers extends Model
 {
     protected $table = 'wxusers';
-
-    protected $fillable = ['wxid'];
-
     public function users()
     {
-        return $this->hasOne(Users::class, 'id', 'user_id');
+        return $this->belongsTo(Users::class, 'id', 'user_id');
     }
 }

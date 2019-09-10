@@ -15,7 +15,7 @@ class UsersController extends AdminController
      *
      * @var string
      */
-    protected $title = 'App\Models\Users';
+    protected $title = '用户管理';
 
     /**
      * Make a grid builder.
@@ -27,20 +27,17 @@ class UsersController extends AdminController
         $grid = new Grid(new Users);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
-        $grid->column('password', __('Password'));
-        $grid->column('remember_token', __('Remember token'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
-        $grid->column('nickname', __('Nickname'));
-        $grid->column('realname', __('Realname'));
+
+        $grid->column('wxUsers.nickname', __('Nickname'));
+        $grid->column('profile.age', __('Age'));
         $grid->column('mobile', __('Mobile'));
         $grid->column('avatar', __('Avatar'));
         $grid->column('code', __('Code'));
         $grid->column('vipcode', __('Vipcode'));
         $grid->column('card_no', __('Card no'));
         $grid->column('last_login_time', __('Last login time'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -55,21 +52,15 @@ class UsersController extends AdminController
     {
         $show = new Show(Users::findOrFail($id));
 
-        $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('email', __('Email'));
-        $show->field('password', __('Password'));
-        $show->field('remember_token', __('Remember token'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
         $show->field('nickname', __('Nickname'));
-        $show->field('realname', __('Realname'));
         $show->field('mobile', __('Mobile'));
         $show->field('avatar', __('Avatar'));
         $show->field('code', __('Code'));
         $show->field('vipcode', __('Vipcode'));
         $show->field('card_no', __('Card no'));
         $show->field('last_login_time', __('Last login time'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
 
         return $show;
     }
@@ -83,12 +74,8 @@ class UsersController extends AdminController
     {
         $form = new Form(new Users);
 
-        $form->text('name', __('Name'));
-        $form->email('email', __('Email'));
-        $form->password('password', __('Password'));
-        $form->text('remember_token', __('Remember token'));
-        $form->text('nickname', __('Nickname'));
-        $form->text('realname', __('Realname'));
+        $form->text('wxUsers.nickname', __('Nickname'));
+        $form->text('profile.age', __('Age'));
         $form->mobile('mobile', __('Mobile'));
         $form->image('avatar', __('Avatar'));
         $form->text('code', __('Code'));
@@ -96,6 +83,15 @@ class UsersController extends AdminController
         $form->text('card_no', __('Card no'));
         $form->number('last_login_time', __('Last login time'));
 
+         // 表单脚部
+        $form->footer(function ($footer) {
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+        });
         return $form;
     }
 }

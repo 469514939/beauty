@@ -86,8 +86,16 @@ class GoodsCateController extends AdminController
         $form->number('updated_by', __('Updated by'));
         $form->number('sort', __('Sort'));
         $form->text('cate_description', __('Cate description'));
-        // $form->text('coverpic', __('Coverpic'));
-        // $form->text('mainpic', __('Mainpic'));
+        
+        // 表单脚部
+        $form->footer(function ($footer) {
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+        });
 
         return $form;
     }

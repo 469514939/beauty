@@ -139,6 +139,15 @@ class GoodsController extends AdminController
         $form->multipleImage('img', '配图');
         $form->text('description', __('Description'));
 
+        // 表单脚部
+        $form->footer(function ($footer) {
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+        });
         return $form;
     }
 }

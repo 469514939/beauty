@@ -30,7 +30,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function wxUsers()
     {
-        return $this->hasOne(WxUsers::class, 'uid', 'id');
+        return $this->hasOne(WxUsers::class, 'user_id', 'id');
     }
 
     protected $fillable = [
