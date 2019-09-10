@@ -118,7 +118,7 @@ class GoodsController extends AdminController
         $form->switch('status', __('Status'));
         $form->number('created_by', __('Created by'));
         $form->number('updated_by', __('Updated by'));
-        $form->textarea('content', __('Content'));
+        
         $form->text('keyword', __('Keyword'));
         $form->decimal('special_price', __('Special price'))->default(0.00);
         $form->decimal('sell_price', __('Sell price'))->default(0.00);
@@ -138,6 +138,9 @@ class GoodsController extends AdminController
         $form->image('mainpic')->uniqueName();
         $form->multipleImage('img', '配图');
         $form->text('description', __('Description'));
+
+        // $form->textarea('content', __('Content'));
+        $form->ueditor('content', '内容')->rules('required');
 
         // 表单脚部
         $form->footer(function ($footer) {

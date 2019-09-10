@@ -39,6 +39,11 @@ class UsersController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
+         $grid->actions(function ($actions) {
+            // 去掉删除
+            $actions->disableDelete();
+        });
+
         return $grid;
     }
 
@@ -52,7 +57,8 @@ class UsersController extends AdminController
     {
         $show = new Show(Users::findOrFail($id));
 
-        $show->field('nickname', __('Nickname'));
+        $show->field('wxUsers.nickname', __('Nickname'));
+        $show->field('profile.age', __('Age'));
         $show->field('mobile', __('Mobile'));
         $show->field('avatar', __('Avatar'));
         $show->field('code', __('Code'));

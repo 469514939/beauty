@@ -2733,6 +2733,59 @@
         ]
     },
     {
+        "name": "qiniu/php-sdk",
+        "version": "v7.2.9",
+        "version_normalized": "7.2.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/qiniu/php-sdk.git",
+            "reference": "afe7d8715d8a688b1d8d8cdf031240d2363dad90"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/qiniu/php-sdk/zipball/afe7d8715d8a688b1d8d8cdf031240d2363dad90",
+            "reference": "afe7d8715d8a688b1d8d8cdf031240d2363dad90",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2019-07-09T07:55:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Qiniu\\": "src/Qiniu"
+            },
+            "files": [
+                "src/Qiniu/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Qiniu",
+                "email": "sdk@qiniu.com",
+                "homepage": "http://www.qiniu.com"
+            }
+        ],
+        "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+        "homepage": "http://developer.qiniu.com/",
+        "keywords": [
+            "cloud",
+            "qiniu",
+            "sdk",
+            "storage"
+        ]
+    },
+    {
         "name": "ramsey/uuid",
         "version": "3.7.0",
         "version_normalized": "3.7.0.0",
@@ -3396,6 +3449,55 @@
         ],
         "description": "Library that helps with managing the version number of Git-hosted PHP projects",
         "homepage": "https://github.com/sebastianbergmann/version"
+    },
+    {
+        "name": "stevenyangecho/laravel-u-editor",
+        "version": "v1.4.5",
+        "version_normalized": "1.4.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stevenyangecho/laravel-u-editor.git",
+            "reference": "975b32cdbf999db4fde619da13a6daae0be12361"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stevenyangecho/laravel-u-editor/zipball/975b32cdbf999db4fde619da13a6daae0be12361",
+            "reference": "975b32cdbf999db4fde619da13a6daae0be12361",
+            "shasum": ""
+        },
+        "require": {
+            "ext-fileinfo": "*",
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0",
+            "qiniu/php-sdk": "7.*"
+        },
+        "time": "2019-07-03T05:13:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stevenyangecho\\UEditor\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Steven Yang",
+                "email": "yqmking@163.com"
+            }
+        ],
+        "description": "UEditor for laravel5. Support i18n. UEditor is a Rich Text Web Editor From Baidu.",
+        "keywords": [
+            "laravel",
+            "laravel-u-editor",
+            "laravel5 web text editor",
+            "steven yang",
+            "stevenyangecho",
+            "ueditor"
+        ]
     },
     {
         "name": "swiftmailer/swiftmailer",
