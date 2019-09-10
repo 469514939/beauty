@@ -114,29 +114,6 @@ class MemberAuthController extends Controller
         if(empty($user)){
             return dataResult('','没有用户信息',0,504);
         }
-        if($user){
-            $arr = Area::getAreaArr($user->area_prov,$user->area_city,$user->area_dist);
-            $user->prov_name = isset($arr[$user->area_prov])?$arr[$user->area_prov]:'';
-            $user->city_name = isset($arr[$user->area_city])?$arr[$user->area_city]:'';
-            $user->dist_name = isset($arr[$user->area_dist])?$arr[$user->area_dist]:'';
-            if(empty($user->prov_name)){
-                $ect = Area::areaList($user->company_id);
-                foreach ($ect as $key => $value) {
-                    $user->prov_name = $value['n'];
-                    $user->prov_id = $key;
-                    foreach ($value['s'] as $key => $value) {
-                        $user->city_name = $value['n'];
-                        $user->city_id = $key;
-                        break;
-                    }
-                    break;
-                }
-            }
-            $user->mobile = !empty($user->mobile)?$user->mobile:null;
-
-            //注析没必要的数据
-            // unset($user->id);
-        }
         return dataResult($user,'',1,200);
     }
 

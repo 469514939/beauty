@@ -27,16 +27,14 @@ class GoodsBrandController extends AdminController
         $grid = new Grid(new GoodsBrand);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('status', __('Status'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
-        $grid->column('created_by', __('Created by'));
-        $grid->column('updated_by', __('Updated by'));
+        $grid->column('name', __('名称'));
+        $grid->column('status', __('状态'));
         $grid->column('url', __('Url'));
         $grid->column('logo', __('Logo'));
         $grid->column('content', __('Content'));
-        $grid->column('sort', __('Sort'));
+        $grid->column('sort', __('序号'));
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -52,8 +50,8 @@ class GoodsBrandController extends AdminController
         $show = new Show(GoodsBrand::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('status', __('Status'));
+        $show->field('name', __('名称'));
+        $show->field('status', __('状态'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         $show->field('created_by', __('Created by'));
@@ -61,7 +59,7 @@ class GoodsBrandController extends AdminController
         $show->field('url', __('Url'));
         $show->field('logo', __('Logo'));
         $show->field('content', __('Content'));
-        $show->field('sort', __('Sort'));
+        $show->field('sort', __('序号'));
 
         return $show;
     }
@@ -75,14 +73,14 @@ class GoodsBrandController extends AdminController
     {
         $form = new Form(new GoodsBrand);
 
-        $form->text('name', __('Name'));
-        $form->switch('status', __('Status'));
+        $form->text('name', __('名称'));
+        $form->switch('status', __('状态'));
         $form->number('created_by', __('Created by'));
         $form->number('updated_by', __('Updated by'));
         $form->url('url', __('Url'));
         $form->text('logo', __('Logo'));
         $form->textarea('content', __('Content'));
-        $form->number('sort', __('Sort'))->default(1);
+        $form->number('sort', __('序号'))->default(1);
 
          // 表单脚部
         $form->footer(function ($footer) {

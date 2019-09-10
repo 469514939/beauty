@@ -27,17 +27,15 @@ class GoodsCateController extends AdminController
         $grid = new Grid(new GoodsCate);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
+        $grid->column('name', __('名称'));
         $grid->column('alias', __('Alias'));
         $grid->column('pid', __('Pid'));
         $grid->column('type_id', __('Type id'));
-        $grid->column('status', __('Status'));
+        $grid->column('status', __('状态'));
+        $grid->column('sort', __('序号'));
+        $grid->column('cate_description', __('Cate description'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-        $grid->column('created_by', __('Created by'));
-        $grid->column('updated_by', __('Updated by'));
-        $grid->column('sort', __('Sort'));
-        $grid->column('cate_description', __('Cate description'));
 
         return $grid;
     }
@@ -62,7 +60,7 @@ class GoodsCateController extends AdminController
         $show->field('updated_at', __('更新时间'));
         // $show->field('created_by', __('Created by'));
         // $show->field('updated_by', __('Updated by'));
-        $show->field('sort', __('Sort'));
+        $show->field('sort', __('序号'));
         $show->field('cate_description', __('描述'));
 
         return $show;
@@ -77,14 +75,14 @@ class GoodsCateController extends AdminController
     {
         $form = new Form(new GoodsCate);
 
-        $form->text('name', __('Name'));
+        $form->text('name', __('名称'));
         $form->text('alias', __('Alias'));
         $form->number('pid', __('Pid'));
         $form->number('type_id', __('Type id'));
-        $form->switch('status', __('Status'));
+        $form->switch('status', __('状态'));
         $form->number('created_by', __('Created by'));
         $form->number('updated_by', __('Updated by'));
-        $form->number('sort', __('Sort'));
+        $form->number('sort', __('序号'));
         $form->text('cate_description', __('Cate description'));
         
         // 表单脚部

@@ -30,16 +30,14 @@ class GoodsController extends AdminController
         $grid = new Grid(new Goods);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
+        $grid->column('name', __('名称'));
         $grid->column('code', __('Code'));
         $grid->column('unit', __('Unit'));
-        $grid->column('status', __('Status'))->using(['1' => '启用', '-1' => '未启用', '-2' => '已删除']);
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('status', __('状态'))->using(['1' => '启用', '-1' => '未启用', '-2' => '已删除']);
         $grid->column('keyword', __('Keyword'));
         $grid->column('market_price', __('Market price'));
         $grid->column('store_nums', __('Store nums'));
-        $grid->column('sort', __('Sort'));
+        $grid->column('sort', __('序号'));
         $grid->column('is_online', __('Is online'));
         $grid->column('mainpic', __('Mainpic'));
         $grid->column('like_count', __('Like count'));
@@ -47,6 +45,9 @@ class GoodsController extends AdminController
         $grid->column('goodsType.name', __('类型'));
         $grid->column('goodsCate.name', __('分类'));
         $grid->column('goodsBrand.name', __('品牌'));
+        
+        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('Updated at'));
 
 
         return $grid;
@@ -64,16 +65,12 @@ class GoodsController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('cate_id', __('Cate id'));
-        $show->field('name', __('Name'));
+        $show->field('name', __('名称'));
         $show->field('code', __('Code'));
         $show->field('type_id', __('Type id'));
         $show->field('brand_id', __('Brand id'));
         $show->field('unit', __('Unit'));
-        $show->field('status', __('Status'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
-        $show->field('created_by', __('Created by'));
-        $show->field('updated_by', __('Updated by'));
+        $show->field('status', __('状态'));
         $show->field('content', __('Content'));
         $show->field('keyword', __('Keyword'));
         $show->field('special_price', __('Special price'));
@@ -89,11 +86,13 @@ class GoodsController extends AdminController
         $show->field('point', __('Point'));
         $show->field('visit', __('Visit'));
         $show->field('favorite', __('Favorite'));
-        $show->field('sort', __('Sort'));
+        $show->field('sort', __('序号'));
         $show->field('is_online', __('Is online'));
         $show->image('mainpic', __('Mainpic'));
         $show->field('img', __('Img'));
-        $show->field('description', __('Description'));
+        $show->field('description', __('描述'));
+        $show->field('created_at', __('Created at'));
+        $show->field('updated_at', __('Updated at'));
 
         return $show;
     }
@@ -109,15 +108,13 @@ class GoodsController extends AdminController
         // dd(GoodsBrand::get()->pluck('name','id'));
 
         $form->number('cate_id', __('Cate id'));
-        $form->text('name', __('Name'));
+        $form->text('name', __('名称'));
         $form->text('code', __('Code'));
         $form->select('type_id','商品类型')->options(GoodsType::get()->pluck('name','id'));
         $form->select('cate_id','商品分类')->options(GoodsCate::get()->pluck('name','id'));
         $form->select('brand_id','商品品牌')->options(GoodsBrand::get()->pluck('name','id'));
         $form->text('unit', __('Unit'));
-        $form->switch('status', __('Status'));
-        $form->number('created_by', __('Created by'));
-        $form->number('updated_by', __('Updated by'));
+        $form->switch('status', __('状态'));
         
         $form->text('keyword', __('Keyword'));
         $form->decimal('special_price', __('Special price'))->default(0.00);
@@ -133,14 +130,13 @@ class GoodsController extends AdminController
         $form->number('point', __('Point'));
         $form->number('visit', __('Visit'));
         $form->number('favorite', __('Favorite'));
-        $form->number('sort', __('Sort'))->default(1);
+        $form->number('sort', __('序号'))->default(1);
         $form->switch('is_online', __('Is online'));
         $form->image('mainpic')->uniqueName();
         $form->multipleImage('img', '配图');
-        $form->text('description', __('Description'));
+        $form->text('description', __('描述'));
 
-        // $form->textarea('content', __('Content'));
-        $form->ueditor('content', '内容')->rules('required');
+        $form->ueditor('content', '内容');
 
         // 表单脚部
         $form->footer(function ($footer) {

@@ -18,15 +18,11 @@
  *
  */
 
-// use App\Admin\Extensions\Form\uEditor;
-// use Encore\Admin\Form;
-// // Encore\Admin\Form::forget(['map', 'editor']);
-// Encore\Admin\Form::forget(['map']);
 
-// Form::extend('ueditor', uEditor::class);
-
-
-use Encore\Admin\Form;
-use App\Admin\Extensions\UEditor;
+// Encore\Admin\Form::forget(['map', 'editor']);
 Encore\Admin\Form::forget(['map']);
-Form::extend('ueditor', UEditor::class);
+
+use App\Admin\Extensions\Form\uEditor;
+use Encore\Admin\Form;
+
+Form::extend('ueditor', uEditor::class);

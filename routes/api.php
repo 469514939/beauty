@@ -18,20 +18,8 @@ use Illuminate\Routing\Router;
 // });
 
 Route::group(['middleware' => ['web','cors']], function (Router $router) {
-    $router->post('/index_Poster','Separation\QygInfoController@index_Poster');//首页轮播图
-    $router->post('/index_Tuijian','Separation\QygInfoController@index_Tuijian');//首页推荐图
-    $router->post('/index_Banner','Separation\QygInfoController@index_Banner');//首页横幅图
-    $router->post('/index_Service','Separation\QygInfoController@index_Service');//首页服务图
-    $router->post('/index_IndexNav','Separation\QygInfoController@index_IndexNav');//首页品牌图
-    $router->post('/index_Floor','Separation\QygInfoController@index_Floor');//首页楼层图
-    $router->post('/index_Bottom','Separation\QygInfoController@index_Bottom');//底部信息
-
-    $router->post('/index_HotProducts','Separation\QygInfoController@index_HotProducts');//首页热销商品
-    $router->post('/index_BrandProducts','Separation\QygInfoController@index_BrandProducts');//首页品牌图
-    $router->post('/index_FavoriteProducts','Separation\QygInfoController@index_FavoriteProducts');//首页喜欢图
-    $router->post('/index_NewProducts','Separation\QygInfoController@index_NewProducts');//首页最新上架图
-    $router->post('/index_TuijianProducts','Separation\QygInfoController@index_TuijianProducts');//首页推荐图
-    $router->post('/index_SeckillProducts','Separation\QygInfoController@index_SeckillProductS');//首页秒杀商品
+    $router->post('/products_list','Separation\ProductsController@products_list');//商品列表
+    $router->post('/products_info','Separation\ProductsController@products_info');//商品详情
 
 });
 

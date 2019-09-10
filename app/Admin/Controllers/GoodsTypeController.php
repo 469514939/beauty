@@ -27,13 +27,13 @@ class GoodsTypeController extends AdminController
         $grid = new Grid(new GoodsType);
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('status', __('Status'));
+        $grid->column('name', __('名称'));
+        $grid->column('status', __('状态'));
         $grid->column('created_time', __('Created time'));
         $grid->column('updated_time', __('Updated time'));
         $grid->column('created_by', __('Created by'));
         $grid->column('updated_by', __('Updated by'));
-        $grid->column('sort', __('Sort'));
+        $grid->column('sort', __('序号'));
 
         return $grid;
     }
@@ -49,13 +49,13 @@ class GoodsTypeController extends AdminController
         $show = new Show(GoodsType::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('status', __('Status'));
+        $show->field('name', __('名称'));
+        $show->field('status', __('状态'));
         $show->field('created_time', __('Created time'));
         $show->field('updated_time', __('Updated time'));
         $show->field('created_by', __('Created by'));
         $show->field('updated_by', __('Updated by'));
-        $show->field('sort', __('Sort'));
+        $show->field('sort', __('序号'));
 
         return $show;
     }
@@ -69,13 +69,13 @@ class GoodsTypeController extends AdminController
     {
         $form = new Form(new GoodsType);
 
-        $form->text('name', __('Name'));
-        $form->switch('status', __('Status'));
+        $form->text('name', __('名称'));
+        $form->switch('status', __('状态'));
         $form->datetime('created_time', __('Created time'))->default(date('Y-m-d H:i:s'));
         $form->datetime('updated_time', __('Updated time'))->default(date('Y-m-d H:i:s'));
         $form->number('created_by', __('Created by'));
         $form->number('updated_by', __('Updated by'));
-        $form->number('sort', __('Sort'));
+        $form->number('sort', __('序号'));
 
         // 表单脚部
         $form->footer(function ($footer) {
