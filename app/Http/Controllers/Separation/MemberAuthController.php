@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
 use App\WxUsers;
-use App\User;
+use App\Users;
 
 class MemberAuthController extends Controller
 {
@@ -37,13 +37,13 @@ class MemberAuthController extends Controller
         }
 
         if(!empty($wxuser)){//已经注册
-            $user = User::find($wxuser->uid);
+            $user = Users::find($wxuser->uid);
             $request->offsetSet('name', $user->name);
             $request->offsetSet('password', $user->plaintext_password);
             return $this->login($request);
             // return dataResult('','该微信已经注册!',0,503);
         }else{//未注册
-            $user = new User();
+            $user = new Users();
 
             //users表保存数据
             $data =[];
@@ -66,12 +66,12 @@ class MemberAuthController extends Controller
             $wxuser->country = $request->country;
 
             DB::beginTransaction();
-            if($user = User::create($data)){
+            if($user = Users::create($data)){
                 $wxdata['uid'] = $user->id;
                 if ($res = $user->wxUsers()->save($wxuser)){
                     DB::commit();
-                    $request->offsetSet('name', $user->name);
-                    $request->offsetSet('password', $user->plaintext_password);
+                    // $request->offsetSet('name', $user->name);
+                    // $request->offsetSet('password', $user->plaintext_password);
                     return $this->login($request);
                 } else{
                     DB::rollBack();
@@ -84,25 +84,17 @@ class MemberAuthController extends Controller
 
     /*登陆*/
     public function login(Request $request)
-    {
-        $inputs = $request->all();
-        if(!isset($inputs['name'])){
-            $input['name'] = isset($input['mobile'])?$input['mobile']:'';
-        }
-        $login_user = DB::table('users')
-                      ->where(function($query) use($request){
-                            $query
-                                ->where('name',$request->name)
-                                ->orWhere('mobile',$request->name);
-                        })
-                      ->select('ip','mobile','login_at','name','mobile','plaintext_password')->first();
-        if(empty($login_user)){
-            return response()->json(dataResult('','帐号或密码错误',0,503));
+    {   
+        $openid = trim($request->openid);
+        $wxuser = WxUsers::where('openid',$openid)->first();
+
+        if (empty($wxuser)) {
+            return response()->json(dataResult('','用户不存在',0,503));
         }
 
         $input = array();
-        $input['name'] = !empty($login_user)?$login_user->name:$inputs['name'];
-        $input['password'] = $request->password;
+        $input['name'] = $wxuser->users->name;
+        $input['password'] = $wxuser->users->plaintext_password;
         $token = auth('api')->attempt($input);
         if (!$token) {
             return response()->json(dataResult('','帐号或密码错误',0,503));
